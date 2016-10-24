@@ -7,5 +7,5 @@ We added only Translator and Validator services.
 Use composer to install:
 
 ```shell
-composer create-project nunopress/sf-micro-edtion project_name
+composer create-project nunopress/sf-micro-edition project_name
 ```
