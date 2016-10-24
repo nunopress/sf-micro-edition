@@ -1,10 +1,10 @@
-{% extends '@VendorNameProjectNameBundle/Resources/views/base.html.twig' %}
+{% extends 'VendorNameProjectNameBundle::base.html.twig' %}
 
 {% block body %}
     <div id="wrapper">
         <div id="container">
             <div id="welcome">
-                <h1><span>Welcome to</span> Symfony {{ constant('Symfony\\Component\\HttpKernel\\Kernel::VERSION') }}</h1>
+                <h1><span>Welcome to</span> Symfony {{ constant('Symfony\\Component\\HttpKernel\\Kernel::VERSION') }} <a href="https://github.com/nunopress/sf-micro-edition">Micro Edition</a></h1>
             </div>
 
             <div id="status">
@@ -13,6 +13,11 @@
 
                     Your application is now ready. You can start working on it at:
                     <code>{{ base_dir }}</code>
+                </p>
+
+                <p>
+                    Load from service and parameters:
+                    <code>{{ example_var }}</code>
                 </p>
             </div>
 

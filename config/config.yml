@@ -1,5 +1,6 @@
 imports:
   - { resource: parameters.yml }
+  - { resource: "@VendorNameProjectNameBundle/Resources/config/services.yml" }
 
 framework:
   # Required configuration

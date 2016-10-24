@@ -72,8 +72,5 @@ class MicroKernel extends Kernel
     {
         // MicroKernel configuration
         $loader->load(__DIR__ . '/config/config_' . $this->getEnvironment() . '.yml');
-
-        // Extra configuration files from bundles
-        $loader->load('@VendorNameProjectNameBundle/Resources/config/config.yml');
     }
 }

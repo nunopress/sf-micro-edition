@@ -23,8 +23,11 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('@VendorNameProjectNameBundle/Resources/views/Default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.root_dir') . '/..') . DIRECTORY_SEPARATOR
+        $example_service = $this->get('vendorname_projectname.example_service');
+
+        return $this->render('VendorNameProjectNameBundle:Default:index.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.root_dir')) . DIRECTORY_SEPARATOR,
+            'example_var' => $example_service->getVar()
         ]);
     }
 

@@ -15,7 +15,7 @@ Debug::enable();
 
 # Create kernel instance
 $kernel = new MicroKernel('dev', true);
-$kernel->loadClassCache(); // Comment this line if you want disable the kernel class cache for speedup
+//$kernel->loadClassCache(); // Comment this line if you want disable the kernel class cache for speedup
 
 # Create request instance
 $request = Request::createFromGlobals();
