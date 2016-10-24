@@ -1,0 +1,7 @@
+# Copy this file to "parameters.yml" with your values
+parameters:
+  # Required parameters
+  kernel.secret: PleaseChangeMeNow
+
+  # Translator parameters
+  locale: en

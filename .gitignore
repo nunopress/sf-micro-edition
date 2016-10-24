@@ -1,0 +1,19 @@
+# Symfony
+/vendor/
+!/sessions
+/sessions/*
+!sessions/.gitkeep
+!/cache
+/cache/*
+!cache/.gitkeep
+!/logs
+/logs/*
+!logs/.gitkeep
+/config/parameters.yml
+/phpunit.xml
+
+# Composer
+composer.lock
+
+# PhpStorm
+/.idea
