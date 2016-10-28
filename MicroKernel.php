@@ -25,18 +25,21 @@ class MicroKernel extends Kernel
      */
     public function registerBundles()
     {
-        // Production bundles
+        # Production bundles
         $bundles = [
-            // Required bundles
+            # Required bundles
             new FrameworkBundle(),
             new SensioFrameworkExtraBundle(),
             new TwigBundle(),
 
-            // Extra bundles
+            # Extra bundles
+            new FOS\HttpCacheBundle\FOSHttpCacheBundle(),
+
+            # Application bundles
             new \VendorName\ProjectNameBundle\VendorNameProjectNameBundle()
         ];
 
-        // Development bundles
+        # Development bundles
         if ('prod' != $this->getEnvironment()) {
             $bundles[] = new WebProfilerBundle();
             $bundles[] = new DebugBundle();
@@ -52,10 +55,10 @@ class MicroKernel extends Kernel
      */
     protected function configureRoutes(RouteCollectionBuilder $routes)
     {
-        // Production routes
+        # Production routes
         $routes->import('@VendorNameProjectNameBundle/Controller', '/', 'annotation');
 
-        // Development routes
+        # Development routes
         if ('prod' != $this->getEnvironment()) {
             $routes->import('@WebProfilerBundle/Resources/config/routing/wdt.xml', '/_wdt');
             $routes->import('@WebProfilerBundle/Resources/config/routing/profiler.xml', '/_profiler');
@@ -70,7 +73,7 @@ class MicroKernel extends Kernel
      */
     protected function configureContainer(ContainerBuilder $c, LoaderInterface $loader)
     {
-        // MicroKernel configuration
+        # Load application configuration
         $loader->load(__DIR__ . '/config/config_' . $this->getEnvironment() . '.yml');
     }
 }

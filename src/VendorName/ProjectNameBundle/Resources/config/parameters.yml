@@ -1,2 +1,3 @@
 parameters:
+  # Example parameter
   vendorname_projectname.example_var: this is a example var

@@ -2,6 +2,7 @@ imports:
   - { resource: parameters.yml }
 
 services:
+  # Example service
   vendorname_projectname.example_service:
     class: VendorName\ProjectNameBundle\ExampleService
     arguments:

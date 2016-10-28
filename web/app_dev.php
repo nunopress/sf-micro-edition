@@ -3,22 +3,38 @@
 use Symfony\Component\Debug\Debug;
 use Symfony\Component\HttpFoundation\Request;
 
-# Config autoload
 /** @var \Composer\Autoload\ClassLoader $loader */
+
+# Config autoload
 $loader = require __DIR__ . '/../config/autoload.php';
+
+# Cache Loader
+$cache_loader = new \Symfony\Component\ClassLoader\ApcClassLoader(sha1(__DIR__), $loader);
+$cache_loader->register();
+$loader->unregister();
 
 # MicroKernel class
 require_once  __DIR__ . '/../MicroKernel.php';
+
+# MicroCache class
+require_once __DIR__ . '/../MicroCache.php';
 
 # Enable Symfony Debug
 Debug::enable();
 
 # Create kernel instance
 $kernel = new MicroKernel('dev', true);
-//$kernel->loadClassCache(); // Comment this line if you want disable the kernel class cache for speedup
+$kernel->loadClassCache();
+
+# Create cache instance
+$kernel = new MicroCache($kernel);
 
 # Create request instance
 $request = Request::createFromGlobals();
+
+# Setup reverse proxy
+Request::setTrustedProxies(array('127.0.0.1', $request->server->get('REMOTE_ADDR')));
+Request::setTrustedHeaderName(Request::HEADER_FORWARDED, null);
 
 # Give response instance
 $response = $kernel->handle($request);
