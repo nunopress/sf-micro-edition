@@ -27,7 +27,7 @@ fos_http_cache:
   proxy_client:
     symfony:
       servers: 127.0.0.1
-      base_url: rignanoinsieme.app
+      base_url: /
   cache_control:
     defaults:
       overwrite: true
