@@ -22,5 +22,6 @@ composer.lock
 /web/budles
 
 # Sources
-/src/
+!src
+/src/*
 !src/.gitkeep
