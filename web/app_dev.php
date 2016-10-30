@@ -17,7 +17,7 @@ $loader->unregister();
 require_once  __DIR__ . '/../MicroKernel.php';
 
 # MicroCache class
-require_once __DIR__ . '/../MicroCache.php';
+//require_once __DIR__ . '/../MicroCache.php';
 
 # Enable Symfony Debug
 Debug::enable();
@@ -27,7 +27,8 @@ $kernel = new MicroKernel('dev', true);
 $kernel->loadClassCache();
 
 # Create cache instance
-$kernel = new MicroCache($kernel);
+// Disable Cache for now, I need to found another way to make this simple
+//$kernel = new MicroCache($kernel);
 
 # Create request instance
 $request = Request::createFromGlobals();

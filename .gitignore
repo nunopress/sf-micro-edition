@@ -17,3 +17,6 @@ composer.lock
 
 # PhpStorm
 /.idea
+
+# Public bundles
+/web/budles

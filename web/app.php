@@ -1,6 +1,5 @@
 <?php
 
-use Symfony\Component\Debug\Debug;
 use Symfony\Component\HttpFoundation\Request;
 
 /** @var \Composer\Autoload\ClassLoader $loader */
@@ -12,14 +11,15 @@ $loader = require __DIR__ . '/../config/autoload.php';
 require_once  __DIR__ . '/../MicroKernel.php';
 
 # MicroCache class
-require_once __DIR__ . '/../MicroCache.php';
+//require_once __DIR__ . '/../MicroCache.php';
 
 # Create kernel instance
 $kernel = new MicroKernel('prod', false);
 $kernel->loadClassCache();
 
 # Create cache instance
-$kernel = new MicroCache($kernel);
+// Disabled for now.
+//$kernel = new MicroCache($kernel);
 
 # Create request instance
 $request = Request::createFromGlobals();

@@ -33,7 +33,6 @@ class MicroKernel extends Kernel
             new TwigBundle(),
 
             # Extra bundles
-            new FOS\HttpCacheBundle\FOSHttpCacheBundle(),
 
             # Application bundles
             new \VendorName\ProjectNameBundle\VendorNameProjectNameBundle()

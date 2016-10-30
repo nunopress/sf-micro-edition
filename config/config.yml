@@ -21,21 +21,3 @@ framework:
   esi: { enabled: true }
   trusted_proxies: [127.0.0.1]
   fragments: { path: "/_fragment" }
-
-# FOS HTTP Cache
-fos_http_cache:
-  proxy_client:
-    symfony:
-      servers: 127.0.0.1
-      base_url: /
-  cache_control:
-    defaults:
-      overwrite: true
-    rules:
-      -
-        match:
-          path: ^/
-        headers:
-          overwrite: false
-          cache_control: { public: true, max_age: 15, s_maxage: 30 }
-          etag: true
