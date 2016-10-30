@@ -35,7 +35,7 @@ class MicroKernel extends Kernel
             # Extra bundles
 
             # Application bundles
-            new \VendorName\ProjectNameBundle\VendorNameProjectNameBundle()
+            #new \VendorName\ProjectNameBundle\VendorNameProjectNameBundle()
         ];
 
         # Development bundles
@@ -55,7 +55,7 @@ class MicroKernel extends Kernel
     protected function configureRoutes(RouteCollectionBuilder $routes)
     {
         # Production routes
-        $routes->import('@VendorNameProjectNameBundle/Controller', '/', 'annotation');
+        #$routes->import('@VendorNameProjectNameBundle/Controller', '/', 'annotation');
 
         # Development routes
         if ('prod' != $this->getEnvironment()) {
