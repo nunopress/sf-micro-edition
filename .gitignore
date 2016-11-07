@@ -1,27 +1,22 @@
 # Symfony
-/vendor/
-!/sessions
-/sessions/*
-!sessions/.gitkeep
-!/cache
-/cache/*
-!cache/.gitkeep
-!/logs
-/logs/*
-!logs/.gitkeep
-/config/parameters.yml
+/app/config/parameters.yml
+/build/
 /phpunit.xml
-
-# Composer
-composer.lock
+/var/*
+!/var/cache
+/var/cache/*
+!var/cache/.gitkeep
+!/var/logs
+/var/logs/*
+!var/logs/.gitkeep
+!/var/sessions
+/var/sessions/*
+!var/sessions/.gitkeep
+!var/SymfonyRequirements.php
+/vendor/
+/web/bundles/
+/bin/security-checker
 
 # PhpStorm
 /.idea
 
-# Public bundles
-/web/budles
-
-# Sources
-!src
-/src/*
-!src/.gitkeep
