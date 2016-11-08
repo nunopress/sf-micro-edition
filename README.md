@@ -1,5 +1,5 @@
-Symfony Standard Edition
-========================
+Symfony Micro Edition
+=====================
 
 Welcome to the Symfony Micro Edition - a stripped version of Symfony Standard Edition that you can use as the 
 skeleton for your new Api/Small applications.
