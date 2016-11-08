@@ -27,8 +27,8 @@ $request = Request::createFromGlobals();
 
 # Setup reverse proxy
 Request::enableHttpMethodParameterOverride();
-Request::setTrustedProxies(array('127.0.0.1', $request->server->get('REMOTE_ADDR')));
-Request::setTrustedHeaderName(Request::HEADER_FORWARDED, null);
+//Request::setTrustedProxies([ '127.0.0.1', $request->server->get('REMOTE_ADDR') ]);
+//Request::setTrustedHeaderName(Request::HEADER_FORWARDED, null);
 
 # Give response instance
 $response = $kernel->handle($request);
