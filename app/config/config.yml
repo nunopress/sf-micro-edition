@@ -17,7 +17,8 @@ framework:
   # Validation service
   validation: { enable_annotations: true }
 
-  # Reverse proxy
-  esi: { enabled: true }
-  trusted_proxies: [127.0.0.1]
-  fragments: { path: "/_fragment" }
+  # Http Cache service
+  esi: ~
+  fragments: ~
+  trusted_proxies: [127.0.0.1, "::1"]
+  http_method_override: true
