@@ -23,7 +23,7 @@ class DefaultController extends Controller
     public function indexAction(Request $request)
     {
         return $this->render('AppBundle:Default:index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.root_dir'))
+            'base_dir' => realpath($this->getParameter('kernel.root_dir') . '/../')
         ]);
     }
 }
