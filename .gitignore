@@ -16,7 +16,9 @@
 /vendor/
 /web/bundles/
 /bin/security-checker
+/bin/phpunit
 
 # PhpStorm
 /.idea
+
 
