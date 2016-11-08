@@ -32,6 +32,10 @@ The Symfony Micro Edition is configured with the following defaults:
   * Twig as the only configured template engine;
 
   * Annotations enabled for everything.
+  
+  * Translator enabled with base configuration.
+  
+  * Http Cache enabled with base configuration.
 
 It comes pre-configured with the following bundles:
 
