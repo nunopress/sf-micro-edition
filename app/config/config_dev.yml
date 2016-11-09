@@ -1,11 +1,11 @@
 imports:
-  - { resource: config.yml }
+    - { resource: config.yml }
 
 framework:
-  # WebProfiler Bundle
-  profiler: { only_exceptions: false }
+    # WebProfiler Bundle
+    profiler: { only_exceptions: false }
 
 # WebProfiler Bundle
 web_profiler:
-  toolbar: true
-  intercept_redirects: false
+    toolbar: true
+    intercept_redirects: false
