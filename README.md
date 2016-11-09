@@ -20,6 +20,15 @@ The result is really nice, fast response, same folders, same code (_made only di
 ready to come back to standard edition easy, you need only to add into composer the other default packages and 
 replace the MicroKernel and MicroCache with AppKernel and AppCache Standard Edition.
 
+> #### Note with Sensio Generator:
+> 
+> If you use a generator for create new Bundle you need to remove the file created `app/config/routing.yml` and
+> activate the routing inside the file `MicroKernel.php` after `# Production routes` with:
+> ```php
+> $routes->import('@NewBundle/Controller', '/', 'annotation');
+> ```
+> Without this modification not have any sense to use MicroKernel instead offical AppKernel.
+
 What's inside?
 --------------
 
