@@ -13,7 +13,6 @@ Debug::enable();
 
 # Create kernel instance
 $kernel = new MicroKernel('dev', true);
-$kernel->loadClassCache();
 
 # Create request instance
 $request = Request::createFromGlobals();
