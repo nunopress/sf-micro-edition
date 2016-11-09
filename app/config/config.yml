@@ -3,22 +3,14 @@ imports:
   - { resource: "@AppBundle/Resources/config/services.yml" }
 
 framework:
-  # Required configuration
+  # Framework Bundle
   secret: "%kernel.secret%"
-  assets: ~
-  form: ~
+
+  # Templating Service
   templating:
     engines: ['twig']
 
-  # Translator service
-  translator: { fallbacks: ["%locale%"] }
-  default_locale: "%locale%"
-
-  # Validation service
-  validation: { enable_annotations: true }
-
-  # Http Cache service
-  esi: ~
-  fragments: ~
-  trusted_proxies: [127.0.0.1, "::1"]
-  http_method_override: true
+# Twig Bundle
+twig:
+  debug:            "%kernel.debug%"
+  strict_variables: "%kernel.debug%"

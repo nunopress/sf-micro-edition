@@ -1,8 +1,6 @@
 imports:
   - { resource: config.yml }
 
-# Required
 framework:
+  # Enable Tests
   test: ~
-
-# Extra

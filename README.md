@@ -31,11 +31,11 @@ The Symfony Micro Edition is configured with the following defaults:
 
   * Twig as the only configured template engine;
 
-  * Annotations enabled for everything.
+  * Setup "locale" parameters on installation.
   
-  * Translator enabled with base configuration.
+  * Http Cache enabled in production with base configuration.
   
-  * Http Cache enabled with base configuration.
+  * Use routing annotations instead a normal yaml configuration.
 
 It comes pre-configured with the following bundles:
 
