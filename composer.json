@@ -36,12 +36,6 @@
       "composer dump-autoload --optimize"
     ]
   },
-  "config": {
-    "bin-dir": "bin",
-    "platform": {
-      "php": "7.0"
-    }
-  },
   "minimum-stability": "dev",
   "prefer-stable": true,
   "extra": {

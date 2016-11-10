@@ -1,47 +1,13 @@
 <?php
 
-use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\Config\Loader\LoaderInterface;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Kernel;
-use Symfony\Component\Routing\RouteCollectionBuilder;
 
 /**
  * Class MicroKernel
  */
 class MicroKernel extends Kernel
 {
-    use MicroKernelTrait;
-
-    /**
-     * Configure your configuration files here
-     *
-     * @param ContainerBuilder $c
-     * @param LoaderInterface $loader
-     */
-    protected function configureContainer(ContainerBuilder $c, LoaderInterface $loader)
-    {
-        # Load application configuration
-        $loader->load($this->getRootDir() . '/config/config_' . $this->getEnvironment() . '.yml');
-    }
-
-    /**
-     * Configure your routes here
-     *
-     * @param RouteCollectionBuilder $routes
-     */
-    protected function configureRoutes(RouteCollectionBuilder $routes)
-    {
-        # Production routes
-        $routes->import('@AppBundle/Controller', '/', 'annotation');
-
-        # Development routes
-        if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
-            $routes->import('@WebProfilerBundle/Resources/config/routing/wdt.xml', '/_wdt');
-            $routes->import('@WebProfilerBundle/Resources/config/routing/profiler.xml', '/_profiler');
-        }
-    }
-
     /**
      * @return string
      */
@@ -59,6 +25,25 @@ class MicroKernel extends Kernel
     }
 
     /**
+     * @return string
+     */
+    public function getRootDir()
+    {
+        return __DIR__;
+    }
+
+    /**
+     * Configure your configuration files here
+     *
+     * @param LoaderInterface $loader
+     */
+    public function registerContainerConfiguration(LoaderInterface $loader)
+    {
+        # Load application configuration
+        $loader->load($this->getRootDir() . '/config/config_' . $this->getEnvironment() . '.yml');
+    }
+
+    /**
      * Register all your bundles here
      *
      * @return array
@@ -71,8 +56,6 @@ class MicroKernel extends Kernel
             new \Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new \Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new \Symfony\Bundle\TwigBundle\TwigBundle(),
-
-            # Extra bundles
 
             # Application bundles
             new \AppBundle\AppBundle()
