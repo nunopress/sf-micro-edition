@@ -4,7 +4,7 @@
   "type": "project",
   "description": "The \"Symfony Micro Edition\" distribution",
   "require": {
-    "symfony/symfony": "3.2.x-dev",
+    "symfony/symfony": "^3.1",
     "sensio/framework-extra-bundle": "^3.0.2",
     "sensio/distribution-bundle": "^5.0",
     "incenteev/composer-parameter-handler": "^2.0"
@@ -28,12 +28,10 @@
       "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
     ],
     "post-install-cmd": [
-      "@symfony-scripts",
-      "composer dump-autoload --optimize"
+      "@symfony-scripts"
     ],
     "post-update-cmd": [
-      "@symfony-scripts",
-      "composer dump-autoload --optimize"
+      "@symfony-scripts"
     ]
   },
   "minimum-stability": "dev",
@@ -47,9 +45,6 @@
     "symfony-assets-install": "relative",
     "incenteev-parameters": {
       "file": "app/config/parameters.yml"
-    },
-    "branch-alias": {
-      "dev-master": "3.2-dev"
     }
   }
 }
