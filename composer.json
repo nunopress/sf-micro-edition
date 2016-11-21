@@ -16,7 +16,7 @@
   },
   "autoload": {
     "psr-4": { "": "src/" },
-    "classmap": [ "app/MicroKernel.php", "app/MicroCache.php" ]
+    "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
   },
   "scripts": {
     "symfony-scripts": [

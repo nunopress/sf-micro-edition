@@ -18,23 +18,24 @@ to come back to the Standard Edition and stripped for make more simple and fast 
 application get 50% run much fast_).
 
 The result is really nice, fast response, same folders, same code (_made only difference on Kernel_) and you 
-ready to come back to standard edition easy, you need only to add into composer the other default packages and 
-replace the MicroKernel and MicroCache with AppKernel and AppCache Standard Edition.
+ready to come back to standard edition easy, you need only to add into composer the other default packages and setup the configuration as well.
 
 What's inside?
 --------------
 
 The Symfony Micro Edition is configured with the following defaults:
 
-  * Stripped Symfony AppKernel/AppCache (_renamed MicroKernel/MicroCache_);
+  * Stripped Symfony AppKernel/AppCache;
   
   * An AppBundle you can use to start coding;
 
   * Twig as the only configured template engine;
 
-  * Setup "locale" parameters on installation.
+  * Setup "locale" parameters on installation;
   
-  * Http Cache/Class Cache enabled in production with base configuration.
+  * Http Cache/Class Cache enabled in production with base configuration;
+
+  * Symfony Reverse Proxy enabled in production;
 
 It comes pre-configured with the following bundles:
 
