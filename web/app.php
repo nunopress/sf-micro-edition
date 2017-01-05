@@ -17,7 +17,11 @@ if (function_exists('apcu_fetch')) {
 
 # Create kernel instance
 $kernel = new AppKernel('prod', false);
-$kernel->loadClassCache();
+
+# Use class cache only when php version is lower of 7.x
+if (version_compare(phpversion(), "7.0.0", "<")) {
+    $kernel->loadClassCache();
+}
 
 # Create cache instance
 $kernel = new AppCache($kernel);
