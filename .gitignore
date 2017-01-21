@@ -18,6 +18,9 @@
 /bin/security-checker
 /bin/phpunit
 
+# Node
+/node_modules/
+
 # PhpStorm
 /.idea
 

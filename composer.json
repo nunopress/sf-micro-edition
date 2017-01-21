@@ -4,7 +4,7 @@
   "type": "project",
   "description": "The \"Symfony Micro Edition\" distribution",
   "require": {
-    "symfony/symfony": "^3.1",
+    "symfony/symfony": "^3.2",
     "sensio/framework-extra-bundle": "^3.0.2",
     "sensio/distribution-bundle": "^5.0",
     "incenteev/composer-parameter-handler": "^2.0"
