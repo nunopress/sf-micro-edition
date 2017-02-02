@@ -24,4 +24,6 @@
 # PhpStorm
 /.idea
 
+# Composer lock file
+composer.lock
 
