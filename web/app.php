@@ -6,7 +6,11 @@ use Symfony\Component\HttpFoundation\Request;
 
 # Config autoload
 $loader = require __DIR__ . '/../app/autoload.php';
-include_once __DIR__ . '/../var/bootstrap.php.cache';
+
+# Don't load class bootstrap file on php 7+
+if (PHP_VERSION_ID > 70000) {
+    include_once __DIR__ . '/../var/bootstrap.php.cache';
+}
 
 # Cache Loader
 if (function_exists('apcu_fetch')) {
@@ -18,13 +22,17 @@ if (function_exists('apcu_fetch')) {
 # Create kernel instance
 $kernel = new AppKernel('prod', false);
 
-# Use class cache only when php version is lower of 7.x
-if (version_compare(phpversion(), "7.0.0", "<")) {
+# Don't load class cache on php 7+
+if (PHP_VERSION_ID > 70000) {
     $kernel->loadClassCache();
 }
 
 # Create cache instance
 $kernel = new AppCache($kernel);
+
+# When using the HttpCache, you need to call the method in your front controller
+# instead of relying on the configuration parameter
+Request::enableHttpMethodParameterOverride();
 
 # Create request instance
 $request = Request::createFromGlobals();
